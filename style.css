@@ -1,0 +1,238 @@
+:root {
+    --bg: #272a34;
+    --fg: #ebe3d5;
+    --secBg: #44475a;
+    --bdradius: 10px;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: sans-serif, monospace, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS';
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#close {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2;
+    background-color: black;
+    opacity: 50%;
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+#settings {
+    z-index: 3;
+    background-color: var(--bg);
+    border-radius: var(--bdradius);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: xx-large;
+    min-width: 442px;
+    display: none;
+}
+
+#settings input {
+    margin: 20px;
+    height: 20px;
+}
+
+#settings select {
+    outline: none;
+    font-size: 20px;
+    background-color: var(--secBg);
+    border-radius: 5px;
+    border: 0;
+    padding: 1px;
+    color: inherit;
+    margin-bottom: 20px;
+}
+
+#settingsHeader {
+    text-align: center;
+    font-size: 3rem;
+    margin: 10px;
+}
+
+#settingsSep {
+    margin-bottom: 20px;
+}
+
+#SettingsOptions {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
+#main {
+    text-align: center;
+}
+
+#top {
+    text-align: right;
+    margin: 2%;
+}
+
+#settingsBtn {
+    border: 0;
+    background-color: inherit;
+    color: inherit;
+    opacity: 50%;
+}
+
+#settingsBtn:hover {
+    opacity: 100%;
+}
+
+#datetime {
+    opacity: 50%;
+}
+
+#day {
+    text-align: left;
+    font-size: 3rem;
+    margin: 2%;
+}
+
+#time {
+    font-size: 7.5rem;
+}
+
+#date {
+    font-size: 1.6rem;
+    margin-bottom: 4%;
+}
+
+#search {
+    width: 60%;
+    margin: auto;
+    position: relative;
+}
+
+#searchbar {
+    border: 0;
+    border-radius: var(--bdradius);
+    display: flex;
+    background-color: var(--secBg);
+    height: 50px;
+    padding: 2px;
+    padding-left: 20px;
+}
+
+#icon {
+    width: 30px;
+    margin-right: 8px;
+}
+
+#searchInput {
+    width: 100%;
+    flex-grow: 2;
+    border: none;
+    background-color: transparent;
+    font-size: 1.1em;
+    color: inherit;
+}
+
+input:focus {
+    outline: none;
+}
+
+#searchSubmit {
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    padding-right: 10px;
+}
+
+#suggestions {
+    background-color: var(--secBg);
+    width: 100%;
+    position: absolute;
+    display: none;
+    z-index: 1;
+    text-align: left;
+    border-radius: 0 0 var(--bdradius) var(--bdradius);
+    padding-bottom: 15px;
+}
+
+#suggestions hr {
+    margin: 0;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+#suggestions p {
+    padding-left: 60px;
+    cursor: pointer;
+    margin: 0;
+    padding: 10px 10px 10px 60px;
+}
+
+#suggestions p:hover {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+#linksection {
+    width: 80%;
+    margin: auto;
+    margin-top: 6%;
+}
+
+#links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.linkGroup {
+    padding: 10px;
+    border-radius: var(--bdradius);
+    flex: 1 1 0%;
+    background-color: var(--secBg);
+    font-size: large;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    padding: 2px 0px;
+}
+
+.linkText {
+    display: inline-block;
+    color: var(--fg);
+    padding: 2px 0px;
+}
+
+@media (max-width: 1000px) {
+    #search {
+        width: 80%;
+    }
+}
+
+@media (max-width: 650px) {
+    .linkGroup {
+        flex: 1 1 40%;
+    }
+}
+
+@media (max-width: 350px) {
+    .linkGroup {
+        flex: 100%;
+    }
+}

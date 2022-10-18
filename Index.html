@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    <title>Startpage</title>
+</head>
+<body>
+    <!--close menu-->
+    <div id="close" onclick="hideMenu()"></div>
+
+    <!--Settings Menu-->
+    <div id="settings">
+        <div id="settingsHeader">Settings</div>
+        <hr id="settingsSep">
+        <div id="SettingsOptions">
+            <label for="seconds">show seconds</label>
+            <input type="checkbox" name="seconds" id="seconds" onchange="toggleSetting('seconds', 'seconds')"><br>
+            <label for="timeFormat">12h time format</label>
+            <input type="checkbox" name="timeFormat" id="timeFormat" onchange="toggleSetting('format12', 'timeFormat')"><br>
+            <label for="autocomplete">autocomplete</label>
+            <input type="checkbox" name="autocomplete" id="autocomplete" onchange="toggleSetting('autocomplete', 'autocomplete')"><br>
+            <label for="bdradius">border radius</label>
+            <select name="bdradius" id="bdradius" onchange="changeBdradius()">
+                <option value="0px">0px</option>
+                <option value="10px">10px</option>
+                <option value="15px">15px</option>
+                <option value="20px">20px</option>
+                <option value="25px">25px</option>
+            </select><br>
+            <label for="background">background</label>
+            <select name="background" id="background" onchange="changeBackground()">
+                <option value="off">default</option>
+                <option value="mountains">mountains</option>
+                <option value="morning">morning</option>
+            </select><br>
+            <label for="showEngineLogo">show search logo</label>
+            <input type="checkbox" name="showEngineLogo" id="showEngineLogo" onchange="toggleSetting('searchLogo', 'showEngineLogo')"><br>
+            <label for="searchEngine">search engine</label>
+            <select name="searchEngine" id="searchEngine" onchange="changeSearchEngine()">
+                <option value="ddg">DuckDuckGo</option>
+                <option value="brave">Brave</option>
+                <option value="startpage">Startpage</option> 
+                <option value="ya">Yandex</option>
+                <option value="g">Google</option>
+                <option value="b">Bing</option>
+                <option value="w">Wikipedia</option>
+                <option value="yt">YouTube</option>
+                <option value="tw">Twitter</option>
+            </select>
+        </div>
+    </div>
+
+    <!--Main-->
+    <div id="main">
+
+        <!--top-->
+        <div id="top">
+            <button id="settingsBtn" class="material-icons" onclick="settingsMenu()">tune</button>
+        </div>
+
+        <!--date-->
+        <div id="datetime">
+            <div id="day">
+                Monday
+            </div>
+            <div id="time">
+                18:35
+            </div>
+            <div id="date">
+                January 1, 0000
+            </div>
+        </div>
+
+        <!--search bar-->
+        <div id="search">
+            <form id="searchbar" action="" autocomplete="off" oninput="suggest()" onsubmit="urlSubmit()">
+                <img id="icon" src="assets/ddg.svg" alt="">
+                <input id="searchInput" type="search" placeholder="Search the web" spellcheck="false">
+                <input id="searchSubmit" class="material-icons" type="submit" value="search" name="">
+            </form>
+            <div id="suggestions"></div>
+        </div>
+
+        <!--links-->
+        <div id="linksection">
+            <div id="links">
+                <div class="linkGroup">
+                    <ul>
+                        <li><i class="material-icons">code</i></li>
+                        <li>
+                            <a href="https://archlinux.org"><span class="linkText">Arch</span></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com"><span class="linkText">Github</span></a>
+                        </li>
+                        <li>
+                            <a href="https://nerdfonts.org"><span class="linkText">Nerd Fonts</span></a>
+                        </li>
+                        <li>
+                            <a href="https://reddit.com/r/startpages"><span class="linkText">r/startpages</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="linkGroup">
+                    <ul>
+                        <li><i class="material-icons">movie</i></li>
+                        <li>
+                            <a href="https://youtube.com"><span class="linkText">YouTube</span></a>
+                        </li>
+                        <li>
+                            <a href="https://netflix.com"><span class="linkText">Netflix</span></a>
+                        </li>
+                        <li>
+                            <a href="https://amazon.de/video"><span class="linkText">Prime Video</span></a>
+                        </li>
+                        <li>
+                            <a href="https://music.amazon.de"><span class="linkText">Amazon Music</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="linkGroup">
+                    <ul>
+                        <li><i class="material-icons">group</i></li>
+                        <li>
+                            <a href="https://reddit.com"><span class="linkText">Reddit</span></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com"><span class="linkText">Twitter</span></a>
+                        </li>
+                        <li>
+                            <a href="https://discord.com"><span class="linkText">Discord</span></a>
+                        </li>
+                        <li>
+                            <a href="https://web.whatsapp.com"><span class="linkText">WhatsApp</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="linkGroup">
+                    <ul>
+                        <li><i class="material-icons">work</i></li>
+                        <li>
+                            <a href="https://mail.google.com"><span class="linkText">Gmail</span></a>
+                        </li>
+                        <li>
+                            <a href="https://docs.google.com"><span class="linkText">Docs</span></a>
+                        </li>
+                        <li>
+                            <a href="https://translate.google.com"><span class="linkText">Translate</span></a>
+                        </li>
+                        <li>
+                            <a href="https://keybr.com"><span class="linkText">Keybr</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="index.js"></script>
+<script src="suggestions.js "></script>
+</html>
