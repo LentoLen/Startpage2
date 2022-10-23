@@ -65,12 +65,12 @@ const setBackground = () => {
     if (getSetting("background") != "off") {
         document.body.style.backgroundImage = `url(assets/${getSetting("background")}.jpg)`
         r.style.setProperty("--bg", "#272a34dd")
-        r.style.setProperty("--secBg", "#44475a66")
+        r.style.setProperty("--secBg", "#030615d6")
         document.getElementById("datetime").style.opacity = "100%"
     } else {
         document.body.style.backgroundImage = "none"
         r.style.setProperty("--bg", "#272a34")
-        r.style.setProperty("--secBg", "#44475a")
+        r.style.setProperty("--secBg", "#030615d6")
         document.getElementById("datetime").style.opacity = "50%"
     }
 }
@@ -100,6 +100,10 @@ BdLoad()
 
 // ----------- time and date ------------
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 // set time and date
 const dateTime = () => {
     const date = new Date()
@@ -111,7 +115,7 @@ const dateTime = () => {
         document.getElementById("time").innerText = date.toLocaleTimeString([], {hour12: getSetting("format12"), hour: '2-digit', minute: '2-digit'})
     }
 
-    document.getElementById("day").innerText = date.toLocaleDateString([], {weekday: "long"})
+    document.getElementById("day").innerText = capitalizeFirstLetter(date.toLocaleDateString([], {weekday: "long"}));
     document.getElementById("date").innerText = date.toLocaleDateString([], {month: "long", day: "numeric", year: "numeric"})
 }
 
