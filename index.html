@@ -10,7 +10,7 @@
 </head>
 <body>
     <!--close menu-->
-    <div id="close" onclick="hideMenu()"></div>
+    <div id="close"></div>
 
     <!--Settings Menu-->
     <div id="settings">
@@ -18,13 +18,13 @@
         <hr id="settingsSep">
         <div id="SettingsOptions">
             <label for="seconds">show seconds</label>
-            <input type="checkbox" name="seconds" id="seconds" onchange="toggleSetting('seconds', 'seconds')"><br>
+            <input type="checkbox" name="seconds" id="seconds"><br>
             <label for="timeFormat">12h time format</label>
-            <input type="checkbox" name="timeFormat" id="timeFormat" onchange="toggleSetting('format12', 'timeFormat')"><br>
+            <input type="checkbox" name="timeFormat" id="timeFormat"><br>
             <label for="autocomplete">autocomplete</label>
-            <input type="checkbox" name="autocomplete" id="autocomplete" onchange="toggleSetting('autocomplete', 'autocomplete')"><br>
+            <input type="checkbox" name="autocomplete" id="autocomplete"><br>
             <label for="bdradius">border radius</label>
-            <select name="bdradius" id="bdradius" onchange="changeBdradius()">
+            <select name="bdradius" id="bdradius"">
                 <option value="0px">0px</option>
                 <option value="10px">10px</option>
                 <option value="15px">15px</option>
@@ -32,7 +32,7 @@
                 <option value="25px">25px</option>
             </select><br>
             <label for="background">background</label>
-            <select name="background" id="background" onchange="changeBackground()">
+            <select name="background" id="background">
                 <option value="off">default</option>
                 <option value="mountains">mountains</option>
                 <option value="morning">morning</option>
@@ -40,9 +40,9 @@
                 <option value="jwcarina">jwcarina</option>
             </select><br>
             <label for="showEngineLogo">show search logo</label>
-            <input type="checkbox" name="showEngineLogo" id="showEngineLogo" onchange="toggleSetting('searchLogo', 'showEngineLogo')"><br>
+            <input type="checkbox" name="showEngineLogo" id="showEngineLogo"><br>
             <label for="searchEngine">search engine</label>
-            <select name="searchEngine" id="searchEngine" onchange="changeSearchEngine()">
+            <select name="searchEngine" id="searchEngine">
                 <option value="ddg">DuckDuckGo</option>
                 <option value="brave">Brave</option>
                 <option value="startpage">Startpage</option> 
@@ -62,7 +62,7 @@
 
         <!--top-->
         <div id="top">
-            <button id="settingsBtn" class="material-icons" onclick="settingsMenu()">tune</button>
+            <button id="settingsBtn" class="material-icons">tune</button>
         </div>
 
         <!--date-->
@@ -80,7 +80,7 @@
 
         <!--search bar-->
         <div id="search">
-            <form id="searchbar" action="" autocomplete="off" oninput="suggest()" onsubmit="urlSubmit()">
+            <form id="searchbar" action="" autocomplete="off">
                 <img id="icon" src="assets/ddg.svg" alt="">
                 <input id="searchInput" type="search" placeholder="Search the web" spellcheck="false">
                 <input id="searchSubmit" class="material-icons" type="submit" value="search" name="">

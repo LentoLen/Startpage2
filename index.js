@@ -149,3 +149,18 @@ const urlSubmit = () => {
     }
     
 }
+
+// Event Handlers to don't need to use inline javascript
+
+document.getElementById("close").addEventListener("click", hideMenu);
+document.getElementById("settingsBtn").addEventListener("click", settingsMenu);
+document.getElementById("searchbar").addEventListener("submit", urlSubmit);
+
+document.getElementById("background").addEventListener("change", changeBackground);
+document.getElementById("bdradius").addEventListener("change", changeBdradius);
+document.getElementById("showEngineLogo").addEventListener("change", function(){ toggleSetting('searchLogo', 'showEngineLogo')});
+document.getElementById("seconds").addEventListener("change", function(){ toggleSetting('seconds', 'seconds')});
+document.getElementById("timeFormat").addEventListener("change", function(){ toggleSetting('format12', 'timeFormat')});
+document.getElementById("autocomplete").addEventListener("change", function(){ toggleSetting('autocomplete', 'autocomplete')});
+document.getElementById("searchEngine").addEventListener("change", changeSearchEngine);
+
