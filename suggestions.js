@@ -124,3 +124,6 @@ const searchSuggestion = (id) => {
 }
 
 hideSearchSuggest();
+
+
+document.getElementById("searchbar").addEventListener("input", suggest);
