@@ -1,0 +1,3 @@
+#Crawlers, stay away from my server!
+User-agent: *
+Disallow: /

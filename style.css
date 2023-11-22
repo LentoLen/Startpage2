@@ -1,7 +1,8 @@
 :root {
     --bg: #272a34;
     --fg: #ebe3d5;
-    --secBg: #44475a;
+    /*--secBg: #44475a;*/
+    --secBg: #030615d6;
     --bdradius: 10px;
 }
 
